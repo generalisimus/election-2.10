@@ -1,0 +1,59 @@
+body {
+	display: flex;
+	justify-content: center;
+}
+
+
+.conteiner {
+	margin-top: 200px;
+	width: 800px;
+	background: #F2F6DA;
+	border-radius: 15px;
+	text-align: center;
+}
+.progress {
+	height:35px; 
+	margin-bottom: 5px;
+	font-weight: bold;
+	font-size: 18px;
+}
+
+h1 {
+	text-align: center;
+	
+}
+
+h2 {
+	text-align: center;
+}
+
+img {
+	width: 150px;
+	height: 150px;
+}
+.btn_result {
+	margin-top: 20px;
+	width: 350px;
+	height: 60px;
+}
+
+.animal {
+	border-radius: 10px;
+}
+
+.dog {
+	color: #1EF0E9;
+}
+
+.cat {
+	color: #FA2182;
+}
+
+.parrot {
+	color: #67F377;
+}
+
+.btn_result {
+	border-radius: 10px;
+	background: #F6DE3B;
+}
