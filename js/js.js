@@ -35,23 +35,29 @@ $(function() {
 });
 
 
-// Функция формирующая POST-запрос	
 function postRequest(voteAnimal) {
-	// Создаем аудио-объект
 	let audio = new Audio('sound/' + voteAnimal + '.mp3');
 	audio.autoplay = true;
-	// Создаём новый XMLHttpRequest-объект
-	let xhr = new XMLHttpRequest();
-	// Создаем новый URL-объект
-	let urls = new URL('https://sf-pyw.mosyag.in/sse/vote/stats' + voteAnimal)
-	// Открываем запрос
-	xhr.open('POST', urls)
-	// Отсылаем POST-запрос с "пустым телом"
-	xhr.send();
 
-	$("#dog").prop("disabled", true);
-	$("#cat").prop("disabled", true);
-	$("#parrot").prop("disabled", true);
-	$('.voice').show();
-	$(".result").prop("disabled", false);
+}	
+const url_c = new URL("https://sf-pyw.mosyag.in/sse/vote/cats")
+const url_d = new URL("https://sf-pyw.mosyag.in/sse/vote/dogs")
+const url_p = new URL("https://sf-pyw.mosyag.in/sse/vote/parrots")
+$(document).ready(init);
+
+function init(){
+	$('#cat').click(function() {
+		vote("cats")});
+	$('#dog').click(function() {
+		vote("dogs")});
+	$('#parrot').click(function() {
+		vote("parrots")});
+}
+
+function vote(pet) {
+	console.log(pet);
+	pet == "cats" ? $.post(url_c, function(data, status){console.log(data, status, 'success with cats')}) :
+	pet == "dogs" ? $.post(url_d, function(data, status){console.log(data, status, 'success with dogs')}) :
+	pet == "parrots" ? $.post(url_p, function(data, status){console.log(data, status, 'success with parrots')}) : null;
+	
 }
