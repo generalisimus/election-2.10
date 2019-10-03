@@ -43,7 +43,7 @@ function postRequest(voteAnimal) {
 	// Создаём новый XMLHttpRequest-объект
 	let xhr = new XMLHttpRequest();
 	// Создаем новый URL-объект
-	let urls = new URL('https://sf-pyw.mosyag.in/sse/vote/' + voteAnimal)
+	let urls = new URL('https://sf-pyw.mosyag.in/sse/vote/stats' + voteAnimal)
 	// Открываем запрос
 	xhr.open('POST', urls)
 	// Отсылаем POST-запрос с "пустым телом"
